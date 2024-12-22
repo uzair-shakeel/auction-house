@@ -1,21 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  font-family: "Roboto", serif;
+  font-weight: 400;
+  font-style: normal;
+} */
+/* Custom styles for react-phone-input-2 */
+.phone-input-wrapper .react-tel-input .form-control {
+  @apply w-full h-12 bg-transparent text-white border-gray-600 pl-12 rounded-md;
 }
 
-@media (prefers-color-scheme: dark) {
+.phone-input-wrapper .react-tel-input .flag-dropdown {
+  @apply border-gray-600 bg-transparent;
+}
+
+.phone-input-wrapper .react-tel-input .selected-flag:hover,
+.phone-input-wrapper .react-tel-input .selected-flag:focus {
+  @apply bg-transparent;
+}
+
+.phone-input-wrapper .react-tel-input .country-list {
+  @apply bg-[#093033] text-white;
+}
+
+.phone-input-wrapper .react-tel-input .country-list .country:hover {
+  @apply bg-[#234B33];
+}
+
+.phone-input-wrapper .react-tel-input .country-list .country.highlight {
+  @apply bg-[#2B5B3E];
+}
+
+/* Hide the default dropdown arrow */
+.phone-input-wrapper .react-tel-input .selected-flag .arrow {
+  @apply border-t-white;
+}
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --radius: 0.5rem;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
